@@ -1,0 +1,93 @@
+table {
+    border: 2px solid blue;
+    width: 1200px;
+    margin: 0 auto;
+   
+   
+}
+.home__container{
+    position: relative;
+}
+ 
+th{
+    border-bottom: 1px solid black;
+    padding:15px 0px;
+    background-color: rgb(49, 49, 228);
+    color: white;
+}
+ 
+td {
+    text-align: center;
+    padding: 10px 0;
+   border-bottom: 1px solid black;
+}
+.home__img{
+    width: 150px;
+    height: 100px;
+}
+.home{
+    padding-top:100px;
+    z-index: 2;
+}
+#delete__btn{
+    background-color:red;
+    border:1px solid white;
+    color:white;
+    padding:10px 15px;
+    margin:3px
+}
+#edit__btn{
+    background-color:green;
+    border:none;
+    padding: 10px 15px;
+    color:white;
+    margin:3px;
+}
+#post__btn{
+    background-color:grey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 3px;
+}
+.form{
+    width: 450px;
+    /* height: 280px; */
+    padding: 20px;
+    background-color: rgb(154, 154, 212);
+    position:absolute;
+    z-index: 100;
+    margin: 0 auto;
+    top: 200px;
+    left: 500px;
+    text-align: center;
+    
+}
+#btn{
+    background-color: cadetblue;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+}
+#name_en,#name_ru,#images{
+    width: 100%;
+    height: 45px;
+    background-color: white;
+}
+#close__btn{
+    padding: 3px 6px;
+}
+#delete{
+    padding:10px 25px;
+    background-color:white;
+    margin:3px;
+}
+p{
+    font-size: 22px;
+    color: white;
+    padding: 10px 0;
+}
+.loading{
+    text-align: center;
+    padding-top:100px
+}
