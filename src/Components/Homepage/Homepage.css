@@ -91,3 +91,7 @@ p{
     text-align: center;
     padding-top:100px
 }
+.modal__img{
+    width: 120px;
+    height: 100px;
+}

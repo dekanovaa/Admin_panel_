@@ -12,6 +12,7 @@ function Homepage() {
   const [id, setId] = useState(null)
   const [category, setCategory] = useState([])
   const [loading, setLoading] = useState(false)
+  const [load, setLoad] = useState(false)
   const [data,setData] = useState({name_en:"name_en", name_ru:"name_ru", images:"images"})
   const imgurl = `https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/`
 
@@ -129,6 +130,7 @@ function Homepage() {
 
   const editCategory = (e) =>{
     e.preventDefault();
+    setLoad(true)
     const formData = new FormData()
     formData.append("name_en",data.name_en);
     formData.append("name_ru",data.name_ru);
@@ -154,6 +156,9 @@ function Homepage() {
     .catch(error=>{
       console.log(error);
       setOpenedit(false)
+    })
+    .finally(()=>{
+      setLoad(false)
     })
   }
 
@@ -199,7 +204,7 @@ function Homepage() {
                 <input type="text" id="name_en" placeholder="English name"/>
                 <input type="text" id="name_ru" placeholder="Russian name"/>
                 <input type="file" id="images"/>
-                <button id="btn" type="Submit">Send</button>
+                <button id="btn" type="Submit" onClick={createCategory}>Send</button>
             </form>
             </div> : " "}
 
@@ -216,10 +221,11 @@ function Homepage() {
               <form id="form" className="form" onSubmit={editCategory}>
                 <button id="close__btn" onClick={closeeditModal}>x</button>
                 <p>Tahrirlash</p>
+                <img className="modal__img" src={`${imgurl}${data.images}`} alt="img"/>
                 <input type="text" value={data.name_en} onChange={(e) => setData({...data, name_en:e.target.value})}/>
                 <input type="text" value={data.name_ru} onChange={(e) => setData({...data, name_ru:e.target.value})}/>
                 <input type="file" onChange={(e) => setData({...data, images:e.target.files[0]})}/><br/>
-                <button type="submit" onSubmit={editCategory}>Save</button>
+            <button id="edit__btn" type="submit" onSubmit={editCategory} disabled={load} >{load? "sending..." :"send"}</button>
               </form>
             ):" "
 
